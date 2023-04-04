@@ -1,8 +1,8 @@
 import javax.swing.JOptionPane;
 import java.text.DecimalFormat;
 
-public class Principal {
-        public static void main(String[] args) throws Exception {
+public class Main {
+        public static void main(String[] args){
                 double investimentoInicial = Double
                                 .parseDouble(JOptionPane.showInputDialog("Investimento Inicial"));
                 double investimentoMensal = Double
@@ -13,7 +13,7 @@ public class Principal {
                                 .parseDouble(JOptionPane.showInputDialog("Porcentagem de Rendimento Mensal"));
 
                 DecimalFormat df = new DecimalFormat();
-                double resultado = CalculadoraInvestimento
+                double resultado = main.java.CalculadoraInvestimento
                                 .montanteFinal(investimentoInicial, investimentoMensal, quantidadeMeses,
                                                 porcentagemRendimentoMensal);
 

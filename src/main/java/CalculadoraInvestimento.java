@@ -1,3 +1,5 @@
+package main.java;
+
 public class CalculadoraInvestimento {
 
     static public double montanteFinal(double investimentoInicial, double investimentoMensal, int quantidadeMeses,
