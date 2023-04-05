@@ -14,7 +14,6 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.mainClass>com.github.nogueiralegacy.projetaInvestimento.application.Main</project.mainClass>
-        <project.name>projetaInvestimento</project.name>
     </properties>
 
     <build>
@@ -35,7 +34,7 @@
                 <artifactId>maven-jar-plugin</artifactId>
                 <version>3.0.2</version>
                 <configuration>
-                    <finalName>${project.name}</finalName>
+                    <finalName>projetaInvestimento</finalName>
                     <archive>
                         <addMavenDescriptor>false</addMavenDescriptor>
                         <manifest>
@@ -67,7 +66,7 @@
                                     <goal>single</goal>
                                 </goals>
                                 <configuration>
-                                    <finalName>${project.name}-console-exec</finalName>
+                                    <finalName>projetaInvestimento-console-exec</finalName>
                                     <archive>
                                         <manifest>
                                             <mainClass>${project.mainClass}</mainClass>
