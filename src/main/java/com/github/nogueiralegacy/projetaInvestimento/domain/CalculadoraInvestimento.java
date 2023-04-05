@@ -13,4 +13,14 @@ public class CalculadoraInvestimento {
 
         return resultado;
     }
+
+    static public double totalInvestido(double investimentoInicial, double investimentoMensal, int quantidadeMeses) {
+        double resultado = investimentoInicial;
+        if (quantidadeMeses == 0) {
+            return resultado;
+        }
+
+        resultado += investimentoMensal * (quantidadeMeses - 1);
+        return resultado;
+    }
 }

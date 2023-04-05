@@ -31,8 +31,12 @@ public class EfetivaAplicacao {
         double porcentagemRendimentoMensal = validaEntradaDeDouble("Porcentagem de Rendimento Mensal");
 
         double montanteFinal = CalculadoraInvestimento.montanteFinal(investimentoInicial, investimentoMensal, quantidadeMeses, porcentagemRendimentoMensal);
-        String resultado = String.format("R$ %,.2f", montanteFinal);
-        Interface.mostrarMensagem("Montante Final", resultado);
+        double totalInvestido = CalculadoraInvestimento.totalInvestido(investimentoInicial, investimentoMensal, quantidadeMeses);
+
+        String montanteFinalFmt = String.format("R$ %,.2f", montanteFinal);
+        String totalInvestidoFmt = String.format("R$ %,.2f", totalInvestido);
+
+        Interface.mostrarMensagem("Projeção", "Montante Final: " + montanteFinalFmt + "\n" + "Total Investido: " + totalInvestidoFmt);
 
     }
 }
