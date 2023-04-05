@@ -1,3 +1,5 @@
+package com.github.nogueiralegacy.projetaInvestimento.application;
+
 import com.github.nogueiralegacy.projetaInvestimento.domain.CalculadoraInvestimento;
 
 import javax.swing.JOptionPane;

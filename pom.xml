@@ -13,7 +13,7 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <project.mainClass>com.github.nogueiralegacy.projetaInvestimento.Main</project.mainClass>
+        <project.mainClass>com.github.nogueiralegacy.projetaInvestimento.application.Main</project.mainClass>
         <project.name>projetaInvestimento</project.name>
     </properties>
 

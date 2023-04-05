@@ -1,6 +1,7 @@
-package com.github.nogueiralegacy.projetaInvestimento.gui;
+package com.github.nogueiralegacy.projetaInvestimento.application;
 
 import com.github.nogueiralegacy.projetaInvestimento.domain.CalculadoraInvestimento;
+import com.github.nogueiralegacy.projetaInvestimento.gui.Interface;
 import com.github.nogueiralegacy.projetaInvestimento.utils.Utils;
 
 public class EfetivaAplicacao {
