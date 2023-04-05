@@ -2,15 +2,16 @@ package com.github.nogueiralegacy.projetaInvestimento.application;
 
 import com.github.nogueiralegacy.projetaInvestimento.domain.CalculadoraInvestimento;
 import com.github.nogueiralegacy.projetaInvestimento.gui.Interface;
-import com.github.nogueiralegacy.projetaInvestimento.utils.Utils;
 
 public class EfetivaAplicacao {
 
     public static double validaEntradaDeDouble(String nomeValor) {
         while (true) {
             double valor;
+            String entrada = Interface.caixaDeDialogo(nomeValor);
+            entrada = entrada.replaceAll(",", ".");
             try {
-                valor = Utils.parseDouble(Interface.caixaDeDialogo(nomeValor));
+                valor = Double.parseDouble(entrada);
             } catch (NumberFormatException e) {
                 Interface.mostrarMensagem("Erro",  nomeValor + " deve ser um número");
                 continue;
@@ -30,7 +31,7 @@ public class EfetivaAplicacao {
         double porcentagemRendimentoMensal = validaEntradaDeDouble("Porcentagem de Rendimento Mensal");
 
         double montanteFinal = CalculadoraInvestimento.montanteFinal(investimentoInicial, investimentoMensal, quantidadeMeses, porcentagemRendimentoMensal);
-        String resultado = String.format("R$ %.2f", montanteFinal);
+        String resultado = String.format("R$ %,.2f", montanteFinal);
         Interface.mostrarMensagem("Montante Final", resultado);
 
     }
