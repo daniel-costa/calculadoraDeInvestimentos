@@ -1,3 +1,5 @@
+import com.github.nogueiralegacy.projetaInvestimento.domain.CalculadoraInvestimento;
+
 import javax.swing.JOptionPane;
 import java.text.DecimalFormat;
 
@@ -13,7 +15,7 @@ public class Main {
                                 .parseDouble(JOptionPane.showInputDialog("Porcentagem de Rendimento Mensal"));
 
                 DecimalFormat df = new DecimalFormat();
-                double resultado = main.java.CalculadoraInvestimento
+                double resultado = CalculadoraInvestimento
                                 .montanteFinal(investimentoInicial, investimentoMensal, quantidadeMeses,
                                                 porcentagemRendimentoMensal);
 
