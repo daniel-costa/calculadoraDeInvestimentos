@@ -29,9 +29,12 @@ public class EfetivaAplicacao {
         double investimentoMensal = validaEntradaDeDouble("Investimento Mensal");
         int quantidadeMeses = (int) validaEntradaDeDouble("Quantidade de Meses Investindo");
         double porcentagemRendimentoMensal = validaEntradaDeDouble("Porcentagem de Rendimento Mensal");
+        double correcaoAnualInvestimentoMensal = validaEntradaDeDouble("Correção Anual do Investimento Mensal");
 
-        double montanteFinal = CalculadoraInvestimento.montanteFinal(investimentoInicial, investimentoMensal, quantidadeMeses, porcentagemRendimentoMensal);
-        double totalInvestido = CalculadoraInvestimento.totalInvestido(investimentoInicial, investimentoMensal, quantidadeMeses);
+        double montanteFinal = CalculadoraInvestimento.montanteFinal(investimentoInicial, investimentoMensal,
+                quantidadeMeses, porcentagemRendimentoMensal, correcaoAnualInvestimentoMensal);
+        double totalInvestido = CalculadoraInvestimento.totalInvestido(investimentoInicial, investimentoMensal,
+                quantidadeMeses, correcaoAnualInvestimentoMensal);
 
         String montanteFinalFmt = String.format("R$ %,.2f", montanteFinal);
         String totalInvestidoFmt = String.format("R$ %,.2f", totalInvestido);
