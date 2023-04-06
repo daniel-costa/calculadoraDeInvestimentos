@@ -10,7 +10,9 @@ public class TestCalculadoraInvestimento {
         double investimentoMensal = 100;
         int quantidadeMeses = 0;
         double porcentagemRendimentoMensal = 1;
-        double resultado = CalculadoraInvestimento.montanteFinal(investimentoInicial, investimentoMensal, quantidadeMeses, porcentagemRendimentoMensal);
+        double correcaoAnualInvestimentoMensal = 1;
+        double resultado = CalculadoraInvestimento.montanteFinal(investimentoInicial, investimentoMensal,
+                quantidadeMeses, porcentagemRendimentoMensal, correcaoAnualInvestimentoMensal);
 
         double resultadoEsperado = 1000;
 
@@ -23,7 +25,9 @@ public class TestCalculadoraInvestimento {
         double investimentoMensal = 100;
         int quantidadeMeses = 1;
         double porcentagemRendimentoMensal = 1;
-        double resultado = CalculadoraInvestimento.montanteFinal(investimentoInicial, investimentoMensal, quantidadeMeses, porcentagemRendimentoMensal);
+        double correcaoAnualInvestimentoMensal = 1;
+        double resultado = CalculadoraInvestimento.montanteFinal(investimentoInicial, investimentoMensal,
+                quantidadeMeses, porcentagemRendimentoMensal, correcaoAnualInvestimentoMensal);
 
         double resultadoEsperado = 1010;
 
@@ -36,10 +40,28 @@ public class TestCalculadoraInvestimento {
         double investimentoMensal = 100;
         int quantidadeMeses = 3;
         double porcentagemRendimentoMensal = 1;
-        double resultado = CalculadoraInvestimento.montanteFinal(investimentoInicial, investimentoMensal, quantidadeMeses, porcentagemRendimentoMensal);
+        double correcaoAnualInvestimentoMensal = 1;
+        double resultado = CalculadoraInvestimento.montanteFinal(investimentoInicial, investimentoMensal,
+                quantidadeMeses, porcentagemRendimentoMensal, correcaoAnualInvestimentoMensal);
         double resultadoFormatado = Math.round(resultado * 1000.0) / 1000.0;
 
         double resultadoEsperado = 1233.311;
+
+        assertEquals(resultadoEsperado, resultadoFormatado);
+    }
+
+    @Test
+    public void testMontanteFinal14Meses() {
+        double investimentoInicial = 100;
+        double investimentoMensal = 100;
+        int quantidadeMeses = 14;
+        double porcentagemRendimentoMensal = 1;
+        double correcaoAnualInvestimentoMensal = 4;
+        double resultado = CalculadoraInvestimento.montanteFinal(investimentoInicial, investimentoMensal,
+                quantidadeMeses, porcentagemRendimentoMensal, correcaoAnualInvestimentoMensal);
+        double resultadoFormatado = Math.round(resultado * 100.0) / 100.0;
+
+        double resultadoEsperado = 1513.73;
 
         assertEquals(resultadoEsperado, resultadoFormatado);
     }
@@ -50,7 +72,9 @@ public class TestCalculadoraInvestimento {
         double investimentoInicial = 1000;
         double investimentoMensal = 100;
         int quantidadeMeses = 0;
-        double resultado = CalculadoraInvestimento.totalInvestido(investimentoInicial, investimentoMensal, quantidadeMeses);
+        double correcaoAnualInvestimentoMensal = 4;
+        double resultado = CalculadoraInvestimento.totalInvestido(investimentoInicial, investimentoMensal,
+                quantidadeMeses, correcaoAnualInvestimentoMensal);
 
         double resultadoEsperado = 1000;
 
@@ -62,7 +86,9 @@ public class TestCalculadoraInvestimento {
         double investimentoInicial = 1000;
         double investimentoMensal = 100;
         int quantidadeMeses = 1;
-        double resultado = CalculadoraInvestimento.totalInvestido(investimentoInicial, investimentoMensal, quantidadeMeses);
+        double correcaoAnualInvestimentoMensal = 4;
+        double resultado = CalculadoraInvestimento.totalInvestido(investimentoInicial, investimentoMensal,
+                quantidadeMeses, correcaoAnualInvestimentoMensal);
 
         double resultadoEsperado = 1000;
 
@@ -73,7 +99,9 @@ public class TestCalculadoraInvestimento {
         double investimentoInicial = 1000;
         double investimentoMensal = 100;
         int quantidadeMeses = 3;
-        double resultado = CalculadoraInvestimento.totalInvestido(investimentoInicial, investimentoMensal, quantidadeMeses);
+        double correcaoAnualInvestimentoMensal = 4;
+        double resultado = CalculadoraInvestimento.totalInvestido(investimentoInicial, investimentoMensal,
+                quantidadeMeses, correcaoAnualInvestimentoMensal);
         double resultadoFormatado = Math.round(resultado * 1000.0) / 1000.0;
 
         double resultadoEsperado = 1200;
@@ -81,4 +109,18 @@ public class TestCalculadoraInvestimento {
         assertEquals(resultadoEsperado, resultadoFormatado);
     }
 
+    @Test
+    public void testTotalInvestido14Meses() {
+        double investimentoInicial = 100;
+        double investimentoMensal = 100;
+        int quantidadeMeses = 14;
+        double correcaoAnualInvestimentoMensal = 4;
+        double resultado = CalculadoraInvestimento.totalInvestido(investimentoInicial, investimentoMensal,
+                quantidadeMeses, correcaoAnualInvestimentoMensal);
+        double resultadoFormatado = Math.round(resultado * 100.0) / 100.0;
+
+        double resultadoEsperado = 1404;
+
+        assertEquals(resultadoEsperado, resultadoFormatado);
+    }
 }
