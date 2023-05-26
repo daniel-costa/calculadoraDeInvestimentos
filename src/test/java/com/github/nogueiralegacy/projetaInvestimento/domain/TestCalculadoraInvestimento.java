@@ -5,7 +5,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class TestCalculadoraInvestimento {
     @Test
-    public void testMontateFinal0Meses() {
+    void testMontateFinal0Meses() {
         double investimentoInicial = 1000;
         double investimentoMensal = 100;
         int quantidadeMeses = 0;
@@ -20,7 +20,7 @@ public class TestCalculadoraInvestimento {
     }
 
     @Test
-    public void testMontateFinal1Mes() {
+    void testMontateFinal1Mes() {
         double investimentoInicial = 1000;
         double investimentoMensal = 100;
         int quantidadeMeses = 1;
@@ -35,7 +35,7 @@ public class TestCalculadoraInvestimento {
     }
 
     @Test
-    public void testMontateFinal3Meses() {
+    void testMontateFinal3Meses() {
         double investimentoInicial = 1000;
         double investimentoMensal = 100;
         int quantidadeMeses = 3;
@@ -51,7 +51,7 @@ public class TestCalculadoraInvestimento {
     }
 
     @Test
-    public void testMontanteFinal14Meses() {
+    void testMontanteFinal14Meses() {
         double investimentoInicial = 100;
         double investimentoMensal = 100;
         int quantidadeMeses = 14;
@@ -68,7 +68,7 @@ public class TestCalculadoraInvestimento {
 
 
     @Test
-    public void testTotalInvestido0Meses() {
+    void testTotalInvestido0Meses() {
         double investimentoInicial = 1000;
         double investimentoMensal = 100;
         int quantidadeMeses = 0;
@@ -82,7 +82,7 @@ public class TestCalculadoraInvestimento {
     }
 
     @Test
-    public void testTotalInvestido1Mes() {
+    void testTotalInvestido1Mes() {
         double investimentoInicial = 1000;
         double investimentoMensal = 100;
         int quantidadeMeses = 1;
@@ -95,7 +95,7 @@ public class TestCalculadoraInvestimento {
         assertEquals(resultadoEsperado, resultado);
     }
     @Test
-    public void testTotalInvestido3Meses() {
+    void testTotalInvestido3Meses() {
         double investimentoInicial = 1000;
         double investimentoMensal = 100;
         int quantidadeMeses = 3;
@@ -110,7 +110,7 @@ public class TestCalculadoraInvestimento {
     }
 
     @Test
-    public void testTotalInvestido14Meses() {
+    void testTotalInvestido14Meses() {
         double investimentoInicial = 100;
         double investimentoMensal = 100;
         int quantidadeMeses = 14;
