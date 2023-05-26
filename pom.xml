@@ -16,6 +16,7 @@
         <project.mainClass>com.github.nogueiralegacy.projetaInvestimento.application.Main</project.mainClass>
     </properties>
 
+
     <build>
         <plugins>
             <plugin>
