@@ -1,11 +1,12 @@
-package com.github.nogueiralegacy.projetaInvestimento.application;
+package com.github.nogueiralegacy.projetainvestimento.application;
 
-import com.github.nogueiralegacy.projetaInvestimento.domain.CalculadoraInvestimento;
-import com.github.nogueiralegacy.projetaInvestimento.gui.Interface;
+import com.github.nogueiralegacy.projetainvestimento.domain.CalculadoraInvestimento;
+import com.github.nogueiralegacy.projetainvestimento.domain.Investimento;
+import com.github.nogueiralegacy.projetainvestimento.gui.Interface;
 
 public class EfetivaAplicacao {
 
-    public static double validaEntradaDeDouble(String nomeValor) {
+    private static double validaEntradaDeDouble(String nomeValor) {
         while (true) {
             double valor;
             String entrada = Interface.caixaDeDialogo(nomeValor);
@@ -24,22 +25,30 @@ public class EfetivaAplicacao {
         }
     }
 
-    public static void aplicacao() {
+    private static Investimento coletaDados() {
         double investimentoInicial = validaEntradaDeDouble("Investimento Inicial");
         double investimentoMensal = validaEntradaDeDouble("Investimento Mensal");
         int quantidadeMeses = (int) validaEntradaDeDouble("Quantidade de Meses Investindo");
         double porcentagemRendimentoMensal = validaEntradaDeDouble("Porcentagem de Rendimento Mensal");
-        double correcaoAnualInvestimentoMensal = validaEntradaDeDouble("Correção Anual do Investimento Mensal");
 
-        double montanteFinal = CalculadoraInvestimento.montanteFinal(investimentoInicial, investimentoMensal,
-                quantidadeMeses, porcentagemRendimentoMensal, correcaoAnualInvestimentoMensal);
-        double totalInvestido = CalculadoraInvestimento.totalInvestido(investimentoInicial, investimentoMensal,
-                quantidadeMeses, correcaoAnualInvestimentoMensal);
+        Investimento investimento = new Investimento();
+        investimento.setValorInicial(investimentoInicial);
+        investimento.setValorMensal(investimentoMensal);
+        investimento.setQuantidadeMeses(quantidadeMeses);
+        investimento.setPorcetagemRendimentoMensal(porcentagemRendimentoMensal);
+
+        return investimento;
+    }
+
+    public static void aplicacao() {
+        Investimento investimento = coletaDados();
+
+        double montanteFinal = CalculadoraInvestimento.montanteFinal(investimento);
+        double totalInvestido = CalculadoraInvestimento.totalInvestido(investimento);
 
         String montanteFinalFmt = String.format("R$ %,.2f", montanteFinal);
         String totalInvestidoFmt = String.format("R$ %,.2f", totalInvestido);
 
         Interface.mostrarMensagem("Projeção", "Montante Final: " + montanteFinalFmt + "\n" + "Total Investido: " + totalInvestidoFmt);
-
     }
 }

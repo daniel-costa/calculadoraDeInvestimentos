@@ -5,15 +5,15 @@
     <packaging>jar</packaging>
 
     <groupId>com.github.nogueiralegacy</groupId>
-    <artifactId>projetaInvestimento</artifactId>
+    <artifactId>projetainvestimento</artifactId>
     <version>1.0</version>
 
     <name>${project.groupId}:${project.artifactId}</name>
-    <url>https://github.com/nogueiralegacy/projetaInvestimento</url>
+    <url>https://github.com/nogueiralegacy/projetainvestimento</url>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <project.mainClass>com.github.nogueiralegacy.projetaInvestimento.application.Main</project.mainClass>
+        <project.mainClass>com.github.nogueiralegacy.projetainvestimento.application.Main</project.mainClass>
     </properties>
 
 
@@ -99,6 +99,13 @@
             <artifactId>junit-jupiter</artifactId>
             <version>5.9.0</version>
             <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.30</version>
+            <scope>provided</scope>
         </dependency>
     </dependencies>
 

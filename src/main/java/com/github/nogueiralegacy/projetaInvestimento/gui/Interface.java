@@ -1,4 +1,4 @@
-package com.github.nogueiralegacy.projetaInvestimento.gui;
+package com.github.nogueiralegacy.projetainvestimento.gui;
 
 import javax.swing.JOptionPane;
 
